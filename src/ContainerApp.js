@@ -52,6 +52,18 @@ export default class ContainerApp extends Component {
         }, this._randomNumber(5, 15) * 1000)
     }
 
+    _downloadQR = () => {
+        const canvas = document.getElementById('qrcode');
+        const pngUrl = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+        // console.log('pngUrl', pngUrl);
+        let downloadLink = document.createElement('a');
+        downloadLink.href = pngUrl;
+        downloadLink.download = 'qrcode.png';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    }
+
     render() {
         return (
             <div className="container">
@@ -66,7 +78,7 @@ export default class ContainerApp extends Component {
                 <button onClick={this._handleCreateWithValue}>Create</button>
                 {this.state.loading ? (
                     <Loading />
-                ) : <QRCodee value={this.state.valueInput} />
+                ) : <QRCodee id="qrcode" onClick={this._downloadQR} value={this.state.valueInput} />
 
                 }
                 <p style={{ color: "red" }}>{this.state.error.value} </p>
