@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background:#1C2739;
+  width: 100vw;
+  height: 100vh;
 }
 
 .App-logo {
@@ -35,4 +38,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.qr {
+  transition: .2s all ease-in-out;
+}
+
+.qr:hover {
+  transform: scale(1.02);
 }

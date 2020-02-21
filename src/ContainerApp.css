@@ -1,0 +1,16 @@
+input {
+    outline: none;
+    border:none;
+    border-bottom: 1px solid tomato;
+    margin: 20px;
+}
+
+input:focus {
+    border-bottom: 3px solid tomato;
+    border-radius: 0%;
+}
+
+.container {
+    /* margin: 50px; */
+    color:#fff;
+}
