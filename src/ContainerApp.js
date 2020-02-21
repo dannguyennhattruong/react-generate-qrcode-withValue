@@ -69,7 +69,7 @@ export default class ContainerApp extends Component {
                 ) : <QRCodee value={this.state.valueInput} />
 
                 }
-                <p style={{ color: "red" }}>{this.state.error.value}</p>
+                <p style={{ color: "red" }}>{this.state.error.value} </p>
             </div>
         )
     }
